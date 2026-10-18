@@ -49,6 +49,23 @@
 <footer class="footer">Caza-Puntos Críticos · Chimbote, Áncash · Participación ciudadana para el cuidado ambiental</footer>
 <div class="modal-back" id="modalBack" onclick="if(event.target===this)closeDetail()"><div class="modal"><div class="modal-top"><h2>Detalle del reporte</h2><button class="close" onclick="closeDetail()">✕</button></div><div id="detailContent"></div></div></div><div id="toast" class="toast"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA5gVcdGMqeHADO9IMMu3wUajSeN49HSA",
+    authDomain: "caza-puntos-criticos-chimbote.firebaseapp.com",
+    projectId: "caza-puntos-criticos-chimbote",
+    storageBucket: "caza-puntos-criticos-chimbote.firebasestorage.app",
+    messagingSenderId: "888450834147",
+    appId: "1:888450834147:web:85f87541b8133f7d9defd6",
+    measurementId: "G-SS5E365KHB"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
 <script>
 const KEY='cazaPuntosChimboteReportsV1', PROFILE='cazaPuntosProfileV1';
 const center=[-9.0853,-78.5783];let reports=loadReports(),formMap,mainMap,formMarker,mainMarkers=[],photoData='',selectedCoords=null,detailId=null;
